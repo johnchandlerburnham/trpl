@@ -26,17 +26,27 @@ the right `rustc` and `cargo`, so make sure you haven't already installed
 `rustc` and `cargo` with `nix-env` or globally in `environment.systemPackages`,
 or you'll get a package name collision.
 
+Also, make sure you have `gcc` installed, since Rust needs a linker.
+
+```
+$ nix-env -iA nixos.gcc
+```
+
+Actually probably not a bad idea to put `gcc` in your `configuration.nix`
+system packages.
+
 ## 1.2 Hello, World!
 
 [see `hello_world/main.rs`]
 
 Okay, so apparently Rust has opinions about how I should indent my code. While I
 respect their desire for consistency of style between libraries, I also have a
-desire for consistency of style across languages. My personal preference is for
-2-space indents with an 80 character line length. That's what I like, but when
-collaborating with other people also always try to defer to the preference of
-the repository owner or primary author. I think that strikes a reasonable
-balance between staying true to my aesthetics and also being friendly.
+desire for consistency of my style across languages. My personal preference is
+for 2-space indents with an 80 character line length. That's what I like, but
+when collaborating with other people I also always try to defer to the
+preference of the repository owner or primary author. I think that strikes a
+reasonable balance between staying true to my aesthetics and also being
+friendly.
 
 (Some languages like Python enforces 4-space indentation as a matter of syntax.
 My policy is to not push-back against language-level syntax enforcement, except
@@ -70,8 +80,8 @@ can build with `nix-build`. The reason we want to do this is that when we start
 to manage dependencies, `nix` is a much more powerful than `cargo`. `nix` is a
 general purpose build-system and package manager that allows us to have
 reproducible, atomic builds. `cargo`, for all its virtues, only works with Rust
-packages (which I think are called crates). So if we run into a situation where
-we have non-rust dependencies, `nix` is going to help us a lot.
+packages (crates). So if we run into a situation where we have non-rust
+dependencies, `nix` is going to help us a lot.
 
 Furthermore, since I'm running NixOS, and therefore already managing all my
 packages with nix, there's some advantage to maintaining consistency. `nix`
@@ -80,17 +90,22 @@ want to, e.g. combine Rust and PureScript into a single application, `nix` will
 be useful for that (since I've already figured out how to have `nix` manage
 Purescript's build environment by integrating with `psc-package` and `npm`)
 
-Instructions for how to use `carnix` are
-[here](https://nixos.org/nixpkgs/manual/#compiling-rust-crates-using-nix-instead-of-cargo):
+~~Instructions for how to use `carnix` are
+[here](https://nixos.org/nixpkgs/manual/#compiling-rust-crates-using-nix-instead-of-cargo):~~
+
+These instructions are outdated, `carnix`'s UI has improved as of version `0.7`;
 
 ```
 $ cargo new hello
 $ cd hello
-$ cargo build
- Compiling hello v0.1.0 (file:///tmp/hello)
-  Finished dev [unoptimized + debuginfo] target(s) in 0.20 secs
-$ carnix -o hello.nix --src ./. Cargo.lock --standalone
-$ nix-build hello.nix -A hello_0_1_0
+$ carnix build
+...
+$ ./result/bin/hello
+Hello, world!
+$ cargo run
+...
+Hello, world!
 ```
 
+Seems like there's no wrapping for `cargo check` though.
 
