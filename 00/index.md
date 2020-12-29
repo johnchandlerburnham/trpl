@@ -27,6 +27,6 @@ tags: rust, notes, trpl
 - [Chapter 16: Fearless Concurrency](/projects/trpl/16)
 - [Chapter 17: Object Oriented Programming Features of Rust](/projects/trpl/17)
 - [Chapter 18: Patterns Match the Structure of Values](/projects/trpl/18)
-- [Chapter 19: Advanced Features](/projects/trpl/19)
-- [Chapter 20: Final Project](/projects/trpl/20)
-- [Chapter 21: Appendix](/projects/trpl/21)
+- Chapter 19: Advanced Features
+- Chapter 20: Final Project
+- Chapter 21: Appendix

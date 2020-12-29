@@ -1,5 +1,5 @@
 ---
-title: "Notes (TRPL 07/21): Packages, Crates, and Modules
+title: "Notes (TRPL 07/21): Packages, Crates, and Modules"
 ---
 
 # 7 Packages, Crates, Modules

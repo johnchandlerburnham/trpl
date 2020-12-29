@@ -1,5 +1,5 @@
 ---
-title: "Notes (TRPL 01/21): Getting Started
+title: "Notes (TRPL 01/21): Getting Started"
 ---
 
 # 1 Getting Started

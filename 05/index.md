@@ -1,5 +1,5 @@
 ---
-title: "Notes (TRPL 05/21): Using Structs to Struture Related Data
+title: "Notes (TRPL 05/21): Using Structs to Struture Related Data"
 ---
 
 # 5 Using Structs to Structure Related Data

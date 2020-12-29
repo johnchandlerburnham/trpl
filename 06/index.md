@@ -1,5 +1,5 @@
 ---
-title: "Notes (TRPL 06/21): Enums and Pattern Matching
+title: "Notes (TRPL 06/21): Enums and Pattern Matching"
 ---
 
 # 6 Enums and Pattern Matching

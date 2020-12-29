@@ -1,5 +1,5 @@
 ---
-title: "Notes (TRPL 08/21): Common Collections
+title: "Notes (TRPL 08/21): Common Collections"
 ---
 
 # 8 Common Collections
